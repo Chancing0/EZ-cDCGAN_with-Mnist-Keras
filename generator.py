@@ -1,18 +1,7 @@
 from __future__ import print_function, division
-from keras.datasets import mnist
-from keras.layers import Input, Dense, Reshape, Flatten, Dropout,concatenate
-from keras.layers import BatchNormalization, Activation, ZeroPadding2D
-from keras.layers.advanced_activations import LeakyReLU
-from keras.layers.convolutional import UpSampling2D, Conv2D
-from keras.models import Sequential, Model
-from keras.optimizers import RMSprop,Adam
 from keras.utils import np_utils
-import keras.backend as K
 from keras.models import load_model
 import matplotlib.pyplot as plt
-
-import sys
-
 import numpy as np
 
 class generator():
@@ -37,8 +26,6 @@ class generator():
 
 if __name__ == '__main__':
     generator=generator()
-    x_label1=[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]
-    x_label2=[7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]
-    condition_shape1=np_utils.to_categorical(x_label1,num_classes=10)
-    condition_shape2=np_utils.to_categorical(x_label2,num_classes=10)
-    generator.save_imgs(condition_shape1+condition_shape2)
+    condition=[1,2,3,4,5,6,7,8,9,5,4,3,2,1,0,7]
+    image=np_utils.to_categorical(condition,num_classes=10)
+    generator.save_imgs(image)
