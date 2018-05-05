@@ -1,6 +1,6 @@
 # EZ-cDCGAN_with-Mnist  
 # Train  
-run cdcgan.py the output model generator.h5  
+run cdcgan.py then would output model generator.h5  
 # evalua/test  
 1. download generator.h5 has been trained.  
 2. run generator.py 
